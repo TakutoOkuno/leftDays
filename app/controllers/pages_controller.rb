@@ -4,9 +4,10 @@ class PagesController < ApplicationController
     the_day_int = @the_day.to_i
 
     now = Time.now
-    now_int = now.to_i # - 32400(9h)
+    now_int = now.to_i - 32400
 
     left_unix_secs = the_day_int - now_int
+
     left_days = left_unix_secs / (60 * 60 * 24)
     left_hours = left_unix_secs / (60 * 60) % 24
     left_minutes = left_unix_secs / 60 % 60
