@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
   def home
-    the_day = Time.local(2018, 12, 3, 14, 40, 00, 0)
-    the_day_int = the_day.to_i
+    @the_day = Time.local(2018, 12, 3, 14, 40, 00, 0)
+    the_day_int = @the_day.to_i
 
     now = Time.now
-    now_int = now.to_i
+    now_int = now.to_i # - 32400(9h)
 
     left_unix_secs = the_day_int - now_int
     left_days = left_unix_secs / (60 * 60 * 24)
